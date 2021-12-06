@@ -55,7 +55,7 @@ bcF1wspAFDrDTavxk8Q81Nkwx4OnGfs7ybxtED6dwgf4o/D4jLSJVg==
 -----END RSA PRIVATE KEY-----"
           ARGS: "-rltgoDzvO --delete"
           SOURCE: "/"
-          REMOTE_HOST: "server228.web-hosting.com/"
+          REMOTE_HOST: "server228.web-hosting.com"
           REMOTE_PORT: "21098"
           REMOTE_USER: "shanricy"
           TARGET: "/home/shanricy/design-preview"
