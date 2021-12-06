@@ -23,39 +23,10 @@ jobs:
     - name: Deploy to Server
       uses: easingthemes/ssh-deploy@v2.1.1
       env:
-          SSH_PRIVATE_KEY: "-----BEGIN RSA PRIVATE KEY-----
-Proc-Type: 4,ENCRYPTED
-DEK-Info: DES-EDE3-CBC,B2FB3621C70F1436
-
-ZgZhumM+I/Rg0fJECA4HejBu235hOgs+zR2QVwxNjVmII10Hr+MeWwJP+6vwbgjm
-hpoNVhFw0xC0m2LjY2jqZFe4NJYXVLnubADVhWI0kLoJBilRitt0tP3HemtqiqHX
-oacjTFunclEsx5cnq38aaIOv2aJXKW7ZjBVZHFZQ5rNw2VJWTJRsY+BHKPmjooGd
-wZmjmrx/IlsFfuVRw2FQ4/xIw4ewBMLWRoerj6dNq47iB2GnkRBoAkuf02pMQ2ZH
-5AwRIaAZXOxIEsMo914u/4i+73Ym7ZbLWFzHVwHIUMUnqktat+JtYFqGS+/2smvA
-zNNDK8QyKkn4wlwmI1hLq8FRrOs+FwykoEkU9YleDcT2IEfrFA7iWRN/UHB73eZy
-CM3pxvAOmeW2a11eVZOvi95+u4BKF5dg4xs2Rn60qZk/au+IfQqiDj646A+4Kjkd
-Bu2k9cRifXAT9rsYIcZyyHVHOKE94wv/wn+xU3nerXna9oPtBbGuVON+m+H95jrV
-505aAo+JeG4nhry47RU4EgjLDFK/Z4G7BBBKcXqsgBb47j5i+oTVqjAnDvE6TZG7
-2E2pbJ9PV2RZPLDCOap5dV/eFh5RdPjxmReVX1TpS6YUi02d4gZeJ8pxMlStS+TU
-flkqIpWCKIz1hiLAFP7106vsC5pQI7Jmx5ujuY6Cqk5isnSOlIe2OmlKGVZMPY96
-evm9ONuqtipzvmGp+qlcy2pn0O/DZe9UMVca0YPmq2SNW9TXZZ1XjPl2Y6E39fMe
-l8eKFJ4cOnBdaNawrxAhJBBaUv1HsKaGYOHCeTD5jMbHAcLiWEY+CevGqPPOvg/I
-ik/YAgDQzbb0FUaoH6+bXaU1/AkqNYRmeScaTaiTXJpoPZN4yCUyPrCdd9i+5KPE
-nm4S6BabifM3jz1O2AzTFs24Q8PzFmiDjsPIEqqq2qTH2dUeak3H3mz+9pOayYji
-39fa2xFidg2hslXseLhKH9kmFIpGLP4S0X5BGq33mhCiTYdZXI3GZ1uucjelAw1r
-IDCm+7CkFJpN1D/A8iwNpKi0lQZ/PKCEbOXTmGr6JuxUglW9Lp5j+nLfIYi/ZyH7
-zFZXMHRasa3qQoovvRe7BuYmgZUBZSWOdr6ULhvHuU1xJty8Yag6DCkENSphIPEo
-qLxDbbKTLp6/YO6ZfYVPZm2kC0ziFOMBUofI2wylWvzYGaIR89Gb1xQDeyYa/+RQ
-u4EkV4XmN/z56T/YAayo5PxLwoeooQ+1B/eDojkhUGzGmyhzVV3V9oz4neFPj11i
-h4aDjRaCOwZe4l5k8lPKdqjxGOOZCYsRXKactX50oS2xaUmlIZ1oAra8r+JVpvm+
-vqIzawrfmwjZra3BKKQgwbNxEEosQX2G/jUzppHCLM0P7sIYgx42ekofphqiS9e8
-mlDD/Ld2c8zJkw5fUj8x2eks42BX4fk/nNnL40gDrPGd7fSCWNJ7olwTZUwJZvTF
-gCsUQlZkxawuHRgxyAQ+anMpXzyMx82vA1hPbZ8Qd+BCuE2KAL0Cs+orTExWu+H+
-bcF1wspAFDrDTavxk8Q81Nkwx4OnGfs7ybxtED6dwgf4o/D4jLSJVg==
------END RSA PRIVATE KEY-----"
+          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
           ARGS: "-rltgoDzvO --delete"
           SOURCE: "/"
-          REMOTE_HOST: "server228.web-hosting.com"
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_PORT: "21098"
-          REMOTE_USER: "shanricy"
-          TARGET: "/home/shanricy/design-preview"
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          TARGET: ${{ secrets.REMOTE_TARGET }}
